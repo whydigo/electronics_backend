@@ -1,7 +1,6 @@
 {
   "name": "marketplace_backend",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,5 +18,14 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Baysangur9/marketplace_backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Baysangur9/marketplace_backend/issues"
+  },
+  "homepage": "https://github.com/Baysangur9/marketplace_backend#readme",
+  "description": ""
 }
