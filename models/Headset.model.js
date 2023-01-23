@@ -6,6 +6,7 @@ const headsetSchema = mongoose.Schema({
     description: String,                    // описание
     image: String,                          // картинка
     price: Number,                          // цена
+	 model:String,                           //модель
     discount: Number,                       // скидка
     //-----------Необязательные-------------
     compatibility: String,                  // совместимость

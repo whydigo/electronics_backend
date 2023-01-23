@@ -13,10 +13,10 @@ module.exports.headsetsController = {
     },
 
     postHeadset: async (req, res) => {
-        const { name, description, image, price, discount, compatibility, connectType, connector, characteristics, techFeatures, nutrition,category } = req.body;
+        const { name, description, image, price,model, discount, compatibility, connectType, connector, characteristics, techFeatures, nutrition,category } = req.body;
 
         try {
-            const headset = await Headset.create({ name, description, image, price, discount, compatibility, connectType, connector, characteristics, techFeatures, nutrition,category });
+            const headset = await Headset.create({ name, description, image, price,model, discount, compatibility, connectType, connector, characteristics, techFeatures, nutrition,category });
 
             const data = await res.json(headset);
             return data;
@@ -27,10 +27,10 @@ module.exports.headsetsController = {
     },
 
     patchHeadset: async (req, res) => {
-        const { name, description, image, price, discount, compatibility, connectType, connector, characteristics, techFeatures, nutrition, category } = req.body;
+        const { name, description, image, price,model, discount, compatibility, connectType, connector, characteristics, techFeatures, nutrition, category } = req.body;
 
         try {
-            const headset = await Headset.findByIdAndUpdate( req.params.headsetId, { name, description, image, price, discount, compatibility, connectType, connector, characteristics, techFeatures, nutrition,category }, { new: true });
+            const headset = await Headset.findByIdAndUpdate( req.params.headsetId, { name, description, image, price,model, discount, compatibility, connectType, connector, characteristics, techFeatures, nutrition,category }, { new: true });
 
             const data = await res.json(headset);
             return data;
