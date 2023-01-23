@@ -10,7 +10,7 @@ const laptopsSchema = mongoose.Schema({
     processorClockSpeed: String,       // Тактовая частота процессора
     numberOfProcessorCores: Number,    // число процессорных ядер
     processor: String,                 // процессор
-    screenResolution: Number,          // разрешение экрана
+    screenResolution: String,          // разрешение экрана
     updateFrequency:  String,          // Частота обновления
     warrantyPeriod: String,            // гарантийный срок
     videoAdapterMemorySize: String,    // Объем памяти видеоадаптера
