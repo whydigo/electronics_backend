@@ -7,12 +7,12 @@ const smarthoneShema = mongoose.Schema({
     numberOfSimCards: Number,  // Количество SIM карт
     operatingSystemVersion: String, // Версия операционной системы
     model: String, // Модель
-    screenDiagonal: Number, // Диагональ экрана
+    screenDiagonal: String, // Диагональ экрана
     screenResolution:String, //  Разрешение экрана
     numberProcessorCores:Number, // Количество ядер процессора
     cpu:String, // Процессор
-    builtInMemory:Number, // Объем встроенной памяти
-    ram:Number, // Объем оперативной памяти
+    builtInMemory:String, // Объем встроенной памяти
+    ram:String, // Объем оперативной памяти
     memoryCardType:String, // Тип карты памяти
     batteryCapacity:String, // Емкость аккумулятора
     image:String,
