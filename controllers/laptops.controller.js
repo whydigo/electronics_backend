@@ -31,7 +31,9 @@ module.exports.laptopsController = {
       name,
       description,
       price,
+		model,
       discount,
+		category
     } = req.body;
 
     try {
@@ -53,7 +55,9 @@ module.exports.laptopsController = {
       name,
       description,
       price,
+		model,
       discount,
+		category
       });
 
       return res.json(laptops);
@@ -82,7 +86,9 @@ module.exports.laptopsController = {
         name,
         description,
         price,
+		  model,
         discount,
+		  category
     } = req.body;
 
     try {
@@ -106,7 +112,9 @@ module.exports.laptopsController = {
             name,
             description,
             price,
+				model,
             discount,
+				category
         },
         { new: true }
       );

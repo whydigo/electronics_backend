@@ -13,10 +13,10 @@ module.exports.televisionsController = {
     },
 
     postTelevision: async (req, res) => {
-        const { name, description, image, price, discount, connection, characteristics, screen, interface, connector } = req.body;
+        const { name, description, image, price, discount, connection, characteristics, screen, interface, connector,model, category } = req.body;
 
         try {
-            const television = await Television.create({ name, description, image, price, discount, connection, characteristics, screen, interface, connector });
+            const television = await Television.create({ name, description, image, price, discount, connection, characteristics, screen, interface, connectormodel, model, category });
 
             const data = await res.json(television);
             return data;
@@ -27,10 +27,10 @@ module.exports.televisionsController = {
     },
 
     patchTelevision: async (req, res) => {
-        const { name, description, image, price, discount, connection, characteristics, screen, interface, connector } = req.body;
+        const { name, description, image, price, discount, connection, characteristics, screen, interface, connector, model, category  } = req.body;
 
         try {
-            const television = await Television.findByIdAndUpdate( req.params.televisionId, { name, description, image, price, discount, connection, characteristics, screen, interface, connector }, { new: true });
+            const television = await Television.findByIdAndUpdate( req.params.televisionId, { name, description, image, price, discount, connection, characteristics, screen, interface, connector, model, category  }, { new: true });
 
             const data = await res.json(television);
             return data;

@@ -6,6 +6,7 @@ const tabletsSchema = mongoose.Schema({
     image: String,                     // картинка
     price: Number,                     // цена
     discount: Number,                  // скидка
+	 model:String,                      //модель
     cpu: String,                       // процессор
     numberOfProcessorCores: Number,    // Количество ядер процессора
     numberOfSimCards: String,          // Количество SIM карт

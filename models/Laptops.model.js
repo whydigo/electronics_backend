@@ -6,6 +6,7 @@ const laptopsSchema = mongoose.Schema({
     image: String,                     // картинка
     price: Number,                     // цена
     discount: Number,                  // скидка
+	 model:String,                      //модель
     processorClockSpeed: String,       // Тактовая частота процессора
     numberOfProcessorCores: Number,    // число процессорных ядер
     processor: String,                 // процессор

@@ -7,6 +7,7 @@ const televisionSchema = mongoose.Schema({
     image: String,                          // картинка
     price: Number,                          // цена
     discount: Number,                       // скидка
+	 model: String,                          // Модель
     //-----------Необязательные-------------
     connection: String,                     // конекторы
     characteristics: String,                // характерестики
@@ -22,6 +23,10 @@ const televisionSchema = mongoose.Schema({
             text: String,
         },
     ],
+	 category:{
+		type:mongoose.SchemaTypes.ObjectId,
+		ref:"Category"
+  },
 });
 
 const Television = mongoose.model('Television', televisionSchema);
