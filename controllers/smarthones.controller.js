@@ -33,6 +33,7 @@ module.exports.smarthoneController ={
             decription,
             price,
             discount,
+				category
         } =req.body
 
         try {
@@ -53,7 +54,8 @@ module.exports.smarthoneController ={
                 name,
                 decription,
                 price,
-                discount,  
+                discount, 
+					 category 
             })
 
             return res.json(smarthones)
@@ -83,6 +85,7 @@ module.exports.smarthoneController ={
             decription,
             price,
             discount,
+				category
         } = req.body
 
         try {
@@ -106,6 +109,7 @@ module.exports.smarthoneController ={
                     decription,
                     price,
                     discount,
+						  category
                 },
                 {new: true}
             );

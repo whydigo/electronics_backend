@@ -15,8 +15,6 @@ const smarthoneShema = mongoose.Schema({
     ram:Number, // Объем оперативной памяти
     memoryCardType:String, // Тип карты памяти
     batteryCapacity:String, // Емкость аккумулятора
-    
-
     image:String,
     name:String,
     decription:String,
