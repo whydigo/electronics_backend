@@ -22,7 +22,7 @@ const cameraSchema = mongoose.Schema({
   ],
   category: {
 	type: mongoose.SchemaTypes.ObjectId,
-	ref: "Category",
+	ref: "Category"
  },
 });
 

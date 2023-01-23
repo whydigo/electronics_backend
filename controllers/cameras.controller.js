@@ -22,6 +22,8 @@ module.exports.cameraController = {
         batteryCapacity,
         typeOfMatrix,
         permission,
+		  reviews,
+		  category
       } = req.body;
       const camera = await Camera.create({
         image,
@@ -34,6 +36,8 @@ module.exports.cameraController = {
         batteryCapacity,
         typeOfMatrix,
         permission,
+		  reviews,
+		  category
       });
       res.json(camera);
     } catch (error) {
