@@ -10,7 +10,7 @@ const tabletsSchema = mongoose.Schema({
     cpu: String,                       // процессор
     numberOfProcessorCores: Number,    // Количество ядер процессора
     numberOfSimCards: String,          // Количество SIM карт
-    screenResolution: Number,          // Разрешение экрана
+    screenResolution: String,          // Разрешение экрана
     ram: String,                       // Объем оперативной памяти
     builtInMemory: String,             // Объем встроенной памяти
     batteryCapacity: String,           // Емкость аккумулятора
