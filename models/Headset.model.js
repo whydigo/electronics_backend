@@ -23,6 +23,10 @@ const headsetSchema = mongoose.Schema({
             text: String,
         },
     ],
+	 category: {
+		type: mongoose.SchemaTypes.ObjectId,
+		ref: "Category"
+	 },
 });
 
 const Headset = mongoose.model('Headset', headsetSchema);
