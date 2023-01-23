@@ -16,7 +16,7 @@ module.exports.televisionsController = {
         const { name, description, image, price, discount, connection, characteristics, screen, interface, connector,model, category } = req.body;
 
         try {
-            const television = await Television.create({ name, description, image, price, discount, connection, characteristics, screen, interface, connectormodel, model, category });
+            const television = await Television.create({ name, description, image, price, discount, connection, characteristics, screen, interface, connector, model, category });
 
             const data = await res.json(television);
             return data;
