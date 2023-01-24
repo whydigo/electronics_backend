@@ -6,13 +6,13 @@ const smartWatchSchema = mongoose.Schema({
   description: String, //описание,
   price: Number, //цена
   discount: Number, //скидка
+  nutrition: String, //питание
+  batteryCapacity: String, //Емкость аккумулятора
   screenDiagonal: String, // диагональ экрана
   screenResolution: String, //разрешение экрана
   typeOfScreen: String, //тип экрана
   model: String, //модель
-  nutrition: String, //питание
   theBatteryChargingTime: String, //время зарядки батареии
-  batteryCapacity: String, //Емкость аккумулятора
   additionalOptionsForSmartHours: String, //Доп. опции смарт-часов
   reviews: [
     {
