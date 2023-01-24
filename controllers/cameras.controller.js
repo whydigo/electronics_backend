@@ -9,6 +9,14 @@ module.exports.cameraController = {
       res.json({ error: error.message });
     }
   },
+  getCameraById: async (req, res) =>{
+	try {
+		const camera = await Camera.findById(req.params.id);
+		res.json(camera)
+	} catch (error) {
+		return res.status(401).json({ error: error.message });
+	}
+  },
   postCamera: async (req, res) => {
     try {
       const {

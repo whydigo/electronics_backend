@@ -3,6 +3,7 @@ const mongoose = require("mongoose")
 
 
 const smarthoneShema = mongoose.Schema({
+	 batteryCapacity:String, // Емкость аккумулятора
     wirelessInterfaces: String, // Беспроводные интерфейсы
     numberOfSimCards: Number,  // Количество SIM карт
     operatingSystemVersion: String, // Версия операционной системы
@@ -14,7 +15,6 @@ const smarthoneShema = mongoose.Schema({
     builtInMemory:String, // Объем встроенной памяти
     ram:String, // Объем оперативной памяти
     memoryCardType:String, // Тип карты памяти
-    batteryCapacity:String, // Емкость аккумулятора
     image:String,
     name:String,
     decription:String,
