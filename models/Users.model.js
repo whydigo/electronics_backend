@@ -10,7 +10,12 @@ const userSchema = mongoose.Schema({
     wholesaler: {
         type: Boolean,
         default: false
-    }
+    },
+	 cart: [{
+		ref:"Camera",
+		type: mongoose.SchemaTypes.ObjectId,
+	 }	
+	 ]
 })
 
 const User = mongoose.model('User', userSchema)
