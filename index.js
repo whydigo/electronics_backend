@@ -1,4 +1,5 @@
 const express = require('express');
+const fileUpload = require('express-fileupload');
 const mongoose = require("mongoose");
 require('dotenv').config() 
 const cors = require('cors');
@@ -8,6 +9,7 @@ const app = express();
 
 app.use(express.json())
 app.use(cors())
+app.use(fileUpload());
 app.use(require('./routes'))
 app.use(express.static(path.resolve(__dirname, "assets")));
 
