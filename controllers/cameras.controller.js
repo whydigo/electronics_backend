@@ -20,7 +20,6 @@ module.exports.cameraController = {
   postCamera: async (req, res) => {
     try {
       const {
-        image,
         name,
         description,
         price,
@@ -33,8 +32,9 @@ module.exports.cameraController = {
 		  reviews,
 		  category
       } = req.body;
+      console.log(req.file);
       const camera = await Camera.create({
-        image,
+        image: req.file.path,
         name,
         description,
         price,
