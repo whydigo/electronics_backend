@@ -8,7 +8,9 @@ const app = express();
 
 app.use(express.json())
 app.use(cors())
+app.use('/assets', express.static(path.join(__dirname, 'assets')))
 app.use(require('./routes'))
+
 app.use(express.static(path.resolve(__dirname, "assets")));
 
 
