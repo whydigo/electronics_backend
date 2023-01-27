@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 module.exports.usersController = {
   // Получение всех пользователей
   getAllUsers: async (req, res) => {
-    const users = await User.find();
+    const users = await User.find().populate("cart");
 
     res.json(users);
   },
@@ -16,7 +16,7 @@ module.exports.usersController = {
 
     const hash = await bcrypt.hash(password, Number(process.env.BCRYPT_ROUNDS));
     const user = await User.create({ login: login, password: hash });
-    
+
     res.json(user);
   },
 
@@ -36,12 +36,28 @@ module.exports.usersController = {
 
     const payload = {
       id: candidate._id,
+      login: candidate.login,
     };
 
     const token = await jwt.sign(payload, process.env.SECRET_JWT_KEY, {
       expiresIn: "24h",
     });
 
-    res.json({ token });
+    res.json({ token, id: payload.id });
+  },
+  addToCart: async (req, res) => {
+    try {
+      const { userId } = req.params;
+      const user = await User.findByIdAndUpdate(
+        userId,
+        {
+          $push: { cart: req.params.cartId },
+        },
+        { new: true }
+      );
+      return res.json(user);
+    } catch (error) {
+      return res.status(400).json(error.message);
+    }
   },
 };
