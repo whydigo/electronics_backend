@@ -38,7 +38,7 @@ module.exports.productController = {
       } = req.body;
 
       const product = await Product.create({
-        // image: req.file.path,
+        image: req.file.path,
         name,
         description,
         price,
