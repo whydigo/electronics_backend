@@ -27,12 +27,6 @@ module.exports.productController = {
         info_7,
         info_8,
         info_9,
-        info_10,
-        info_11,
-        info_12,
-        info_13,
-        info_14,
-        info_15,
         reviews,
         category,
       } = req.body;
@@ -53,12 +47,6 @@ module.exports.productController = {
         info_7,
         info_8,
         info_9,
-        info_10,
-        info_11,
-        info_12,
-        info_13,
-        info_14,
-        info_15,
         reviews,
         category,
       });
@@ -85,12 +73,6 @@ module.exports.productController = {
         info_7,
         info_8,
         info_9,
-        info_10,
-        info_11,
-        info_12,
-        info_13,
-        info_14,
-        info_15,
       } = req.body;
 
       const product = await Product.findByIdAndUpdate(
@@ -110,12 +92,6 @@ module.exports.productController = {
           info_7,
           info_8,
           info_9,
-          info_10,
-          info_11,
-          info_12,
-          info_13,
-          info_14,
-          info_15,
         },
         { new: true }
       );
