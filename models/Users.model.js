@@ -12,7 +12,7 @@ const userSchema = mongoose.Schema({
         default: false
     },
 	 cart: [{
-		ref:"Camera",
+		ref:"Product",
 		type: mongoose.SchemaTypes.ObjectId,
 	 }	
 	 ]
