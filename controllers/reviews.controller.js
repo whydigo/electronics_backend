@@ -3,7 +3,7 @@ const Review = require("../models/Reviews.model");
 module.exports.reviewsController = {
   getReviews: async (req, res) => {
     try {
-      const reviews = await Review.find();
+      const reviews = await Review.find().populate("product");
 
       res.json(reviews);
     } catch (error) {
@@ -12,7 +12,7 @@ module.exports.reviewsController = {
   },
 
   postReviews: async (req, res) => {
-    const { text, product } = req.body; 
+    const { text, product } = req.body;
     try {
       const reviews = await Review.create({ text, product });
 
