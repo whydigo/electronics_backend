@@ -60,4 +60,19 @@ module.exports.usersController = {
       return res.status(400).json(error.message);
     }
   },
+  deleteFromCart: async (req, res) => {
+    try {
+      const { userId } = req.params;
+      const user = await User.findByIdAndUpdate(
+        userId,
+        {
+          $pull: { cart: req.params.cartId },
+        },
+        { new: true }
+      );
+      return res.json(user);
+    } catch (error) {
+      return res.status(400).json(error.message);
+    }
+  },
 };
