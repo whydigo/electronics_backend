@@ -27,7 +27,6 @@ module.exports.productController = {
         info_7,
         info_8,
         info_9,
-        reviews,
         category,
       } = req.body;
 
@@ -47,7 +46,6 @@ module.exports.productController = {
         info_7,
         info_8,
         info_9,
-        reviews,
         category,
       });
       res.json(product);

@@ -14,9 +14,12 @@ module.exports.usersController = {
   registerUser: async (req, res) => {
     const { login, password } = req.body;
 
+    const candidate = await User.findOne({ login });
+    if (candidate) {
+      return res.status(401).json("Такой пользователь уже существует");
+    }
     const hash = await bcrypt.hash(password, Number(process.env.BCRYPT_ROUNDS));
     const user = await User.create({ login: login, password: hash });
-
     res.json(user);
   },
 

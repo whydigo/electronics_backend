@@ -1,4 +1,5 @@
 const Review = require("../models/Reviews.model");
+const jwt = require("jsonwebtoken");
 
 module.exports.reviewsController = {
   getReviews: async (req, res) => {
@@ -13,11 +14,15 @@ module.exports.reviewsController = {
 
   postReviews: async (req, res) => {
     const { text, product } = req.body;
-    try {
-      const reviews = await Review.create({ text, product });
+    const { authorization } = req.headers;
+    const [type, token] = authorization.split(" ");
 
-      const data = await res.json(reviews);
-      return data;
+    try {
+      const payload = await jwt.verify(token, process.env.SECRET_JWT_KEY);
+      const reviews = await Review.create({ text, product, user: payload.id });
+
+      const data = await reviews.populate("user");
+      return res.json(data);
     } catch (error) {
       return res.json({ error: error.message });
     }
