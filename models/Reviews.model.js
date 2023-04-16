@@ -5,6 +5,10 @@ const reviewSchema = mongoose.Schema({
   product: {
     type: mongoose.SchemaTypes.ObjectId,
     ref: "Product"
+  },
+  user: {
+    type: mongoose.SchemaTypes.ObjectId,
+    ref: "User"
   }
 });
 
