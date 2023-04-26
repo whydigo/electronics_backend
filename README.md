@@ -1,4 +1,4 @@
-# electronics-backend
+# Electronics-Backend
 
 Здесь содержится backend часть проекта [Electronics-Frontend](https://github.com/whydigo/electronics_frontend).
 
