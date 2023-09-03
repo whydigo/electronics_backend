@@ -47,6 +47,7 @@ module.exports.productController = {
         info_8,
         info_9,
         category,
+        reviews: [],
       });
       res.json(product);
     } catch (error) {
@@ -71,6 +72,7 @@ module.exports.productController = {
         info_7,
         info_8,
         info_9,
+        reviews,
       } = req.body;
 
       const product = await Product.findByIdAndUpdate(

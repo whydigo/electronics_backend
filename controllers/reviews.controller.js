@@ -1,4 +1,5 @@
 const Review = require("../models/Reviews.model");
+const Product = require("../models/Product.model");
 const jwt = require("jsonwebtoken");
 
 module.exports.reviewsController = {
@@ -30,11 +31,16 @@ module.exports.reviewsController = {
 
   deleteReviews: async (req, res) => {
     try {
-      const reviews = await Review.findByIdAndDelete(req.params.reviewId);
-
-      res.json("Удалено");
+      const deletedReview = await Review.findByIdAndDelete(req.params.reviewId);
+  
+      if (!deletedReview) {
+        return res.status(404).json({ error: "Отзыв не найден" });
+      }
+  
+      res.json("Отзыв удален успешно");
     } catch (error) {
-      return res.json({ error: error.message });
+      return res.status(500).json({ error: error.message });
     }
   },
+  
 };
